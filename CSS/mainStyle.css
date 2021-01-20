@@ -1,0 +1,264 @@
+/* #### Vatiables #### */
+
+:root {
+    --dark-primary-color: #ffcbf2;
+    /* Background */
+    --default-primary-color: #c0fdff;
+    /* Background */
+    --light-primary-color: #D1C4E9;
+    /* Background */
+    --text-primary-color: #FFFFFF;
+    /* Color */
+    --accent-color: #FF5722;
+    /* Background */
+    --primary-text-color: #212121;
+    /* Color */
+    --secondary-text-color: #757575;
+    /* Color */
+    --divider-color: #BDBDBD;
+    /* Border-Color */
+    --TextStyleHome: 'Yellowtail';
+    --TextStyleHomeProperties: cursive;
+}
+
+/* #### Iniciadores #### */
+
+*, a, p {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+    position: relative;
+    min-height: 100%;   
+} 
+
+body {
+    width: 100%;
+    min-width: 500px;
+    min-height: 570px;
+    margin-bottom: 30px;
+    background-image: url(../images/wordcloud04.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+
+}
+
+a, a:hover {
+    text-decoration: none;
+    
+}
+
+/* #### boostrap #### */
+
+.align-self-center.textName {
+    flex-direction: column
+}
+
+/* #### Media #### */
+
+@media only screen and (max-width: 700px) {
+    .namePage {
+        width: 500px;
+        height: 500px;
+    }
+    .imageRounded {
+        width: 200px;
+        min-width: 200px;
+        height: 200px;
+    }
+    .textName {
+        height: 200px;
+        width: 350px;
+        font-size: 40px;
+    }
+  }
+@media only screen and (min-width: 700px) {
+    .namePage {
+        width: 650px;
+        height: 300px;
+    }
+    .imageRounded {
+        width: 200px;
+        min-width: 200px;
+        height: 200px;
+    }
+    .textName {
+        height: 200px;
+        width: 350px;
+        font-size: 40px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .namePage {
+        width: 900px;
+        height: 400px;
+    }
+    .imageRounded {
+        width: 300px;
+        min-width: 300px;
+        height: 300px;
+    }
+    .textName {
+        height: 300px;
+        width: 500px;
+        font-size: 60px;
+    }
+}
+
+/* #### content #### */
+
+.namePage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    background: inherit;
+    z-index: 1;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    overflow: hidden
+
+}
+.namePage:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(53, 49, 48, .25);
+    filter: blur(10px);
+    background: inherit;
+    z-index: -1;
+    margin: -20px;
+}
+
+
+
+.boxShadow {
+    border: 5px solid  rgba(255, 255, 255, 0);
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.2),
+                -5px -5px 5px rgba(255, 255, 255, 0.3),
+                15px 15px 15px rgba(0, 0, 0, 0.2),
+                5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+  
+.imageRounded {
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 30px;
+}
+
+/* ## Text Name ## */
+
+.textName {
+    padding: 0px 15px;
+    border-radius: 25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    
+}
+
+.textName p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary-color);
+    padding: 0px 10px;
+    font-family: 'Niconne', cursive;
+}
+
+/* ## Social Network ## */
+
+.socialNetworksMain {
+    margin-bottom: 10px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.socialNetworksIcon {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialNetworksIcon:hover {
+    box-shadow: inset 3px 3px 3px 0 rgba(0, 0, 0, 0.2),
+                inset 1px 1px 1px 0 rgba(0, 0, 0, 0.25),
+                inset -3px -3px 3px 0 rgba(255, 255, 255, 0.2),
+                inset -1px -1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.socialNetworksMain a {
+    color: var(--text-primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialNetworksMain a:hover {
+    color: var(--text-primary-color);
+
+}
+
+.socialNetworksMain a i {
+    font-size: 50px;
+}
+
+/* #### Footer #### */
+
+.footerCustom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px; /* Vertically center the text there */
+    color: whitesmoke;
+    background: black;
+}
+
+
+.poweredBy {
+    float: right;
+    padding: 0px 15px;
+    font-size: 12px;
+}
+
+.footPoweredByUrl {
+    color: white;
+    font-size: 18px;
+}
+
+.footPoweredByUrl:hover {
+    color: white;
+    font-size: 22px;
+    
+}
+
+.footPoweredByUrlSpan {
+    font-family: 'Niconne', cursive;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.footPoweredByDomainSpan {
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+
+}
