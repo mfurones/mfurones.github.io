@@ -36,6 +36,56 @@ body {
     overflow: hidden;  
 } 
 
+a, a:hover {
+    text-decoration: none;
+}
+
+/* #### Media #### */
+
+@media only screen and (max-width: 700px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card .card01 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card .card02 {
+        width: 400px;
+        height: 150px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card02 .socialNetworksMain {
+        flex-direction: row;
+    }
+  }
+@media only screen and (min-width: 700px) {
+    .card {
+        flex-direction: row;
+    }
+
+    .card .card01 {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .card .card02 {
+        width: 150px;
+        height: 400px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .card02 .socialNetworksMain {
+        flex-direction: column;
+    }
+}
+
+/* #### Content #### */
 
 section {
     display: flex;
@@ -53,7 +103,6 @@ section {
     position: relative;
     display: flex;
     align-items: center;
-    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -61,7 +110,6 @@ section {
     position: relative;
     width: 400px;
     height: 400px;
-    margin-inline: 30px;    
     transform-style: preserve-3d;
     perspective: 1000px;
 }
@@ -187,15 +235,11 @@ section {
 
 .card .card02 {
     position: relative;
-    width: 150px;
-    height: 400px;
-    margin-inline: 30px;
 }
 
 .card02 .socialNetworksMain {
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: space-around;
     position: absolute;
     top: 0;
@@ -204,6 +248,7 @@ section {
     height: 100%;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     background:rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     backface-visibility: hidden;
@@ -241,6 +286,8 @@ section {
 
 .socialNetworksIcon a {
     font-size: 60px;
+    text-align: center;
+    vertical-align: baseline;
 }
 
 #linkedin:hover a, #twitter:hover a, #facebook:hover a, #github:hover a {
@@ -279,3 +326,40 @@ section {
     background-color: rgba(23, 21, 21, 0.7);
 }
 
+/* #### footer #### */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#fpb {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#fpb p {
+    color: rgb(245, 245, 245, 0.5);
+    font-size: xx-small;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#fpb #fpbUrl {
+    color: rgb(255, 165, 0);
+    font-size: large;
+    font-weight: bold;
+}
+
+#fpb #fpbDomain {
+    color: rgb(255, 165, 0, 0.5);
+    font-size: x-small;
+    font-weight: bold;
+}
