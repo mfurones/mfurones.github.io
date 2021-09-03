@@ -10,7 +10,6 @@ Alguno de los tantos lenguajes y frameworks que se estan utilizando:
 * HTML5
 * CSS3
 * Java Script
-* BootStrap
 
 ## Help
 

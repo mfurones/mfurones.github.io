@@ -1,4 +1,6 @@
 /* #### Vatiables #### */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,700&display=swap');
 
 :root {
     --dark-primary-color: #ffcbf2;
@@ -23,242 +25,257 @@
 
 /* #### Iniciadores #### */
 
-*, a, p {
+* {
     margin: 0;
     padding: 0;
     list-style-type: none;
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%; 
-    position: relative;
-    min-height: 100%;   
+body {
+    overflow: hidden;  
 } 
 
-body {
-    width: 100%;
-    min-width: 500px;
-    min-height: 570px;
-    margin-bottom: 30px;
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-image: url(../images/wordcloud04.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    
-
 }
 
-a, a:hover {
-    text-decoration: none;
-    
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-/* #### boostrap #### */
-
-.align-self-center.textName {
-    flex-direction: column
+.card .card01 {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-inline: 30px;    
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
-/* #### Media #### */
-
-@media only screen and (max-width: 700px) {
-    .namePage {
-        width: 500px;
-        height: 500px;
-    }
-    .imageRounded {
-        width: 200px;
-        min-width: 200px;
-        height: 200px;
-    }
-    .textName {
-        height: 200px;
-        width: 350px;
-        font-size: 40px;
-    }
-  }
-@media only screen and (min-width: 700px) {
-    .namePage {
-        width: 650px;
-        height: 300px;
-    }
-    .imageRounded {
-        width: 200px;
-        min-width: 200px;
-        height: 200px;
-    }
-    .textName {
-        height: 200px;
-        width: 350px;
-        font-size: 40px;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    .namePage {
-        width: 900px;
-        height: 400px;
-    }
-    .imageRounded {
-        width: 300px;
-        min-width: 300px;
-        height: 300px;
-    }
-    .textName {
-        height: 300px;
-        width: 500px;
-        font-size: 60px;
-    }
-}
-
-/* #### content #### */
-
-.namePage {
+.card01 .face {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: fit-content;
-    height: fit-content;
-    padding: 20px;
-    background: inherit;
-    z-index: 1;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2),
-                10px 10px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background:rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    transform-style: preserve-3d;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    box-shadow: -10px -10px 5px rgba(255, 255, 255, 0.05),
+                -3px -3px 2px rgba(255, 255, 255, 0.3),
+                4px 4px 3px rgba(0, 0, 0, 0.5),
+                10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.clogo {
+    padding: 10px;
+    position: relative;
+    border-radius: 50%;
+    width: 225px;
+    height: 225px;
     overflow: hidden;
+    box-shadow: inset -10px -10px 5px rgba(255, 255, 255, 0.05),
+                inset -3px -3px 2px rgba(255, 255, 255, 0.3),
+                inset 4px 4px 3px rgba(0, 0, 0, 0.5),
+                inset 10px 10px 5px rgba(0, 0, 0, 0.2);
 
 }
-.namePage:before {
-    content: '';
+
+.ctext {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 20s linear infinite;    
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.ctext span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.7em;
+    font-family: 'Orbitron', sans-serif;
+    transform-origin: 0 150px;
+}
+
+.card01:hover  .face.front, .card01:active  .face.front {
+    transform: rotateY(180deg);
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background:rgba(255, 255, 255, 0.3);
+    box-shadow: inset -10px -10px 5px rgba(255, 255, 255, 0.05),
+                inset -3px -3px 2px rgba(255, 255, 255, 0.3),
+                inset 4px 4px 3px rgba(0, 0, 0, 0.6),
+                inset 10px 10px 5px rgba(0, 0, 0, 0.4);
+}
+
+#about h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#about p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.card01 .face.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transform: rotateY(180deg);
+}
+
+.card01:hover .face.back, .card01:active .face.back {
+    transform: rotateY(360deg);
+}
+
+.card .card02 {
+    position: relative;
+    width: 150px;
+    height: 400px;
+    margin-inline: 30px;
+}
+
+.card02 .socialNetworksMain {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(53, 49, 48, .25);
-    filter: blur(10px);
-    background: inherit;
-    z-index: -1;
-    margin: -20px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background:rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    backface-visibility: hidden;
 }
-
-
-
-.boxShadow {
-    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.2),
-                -5px -5px 5px rgba(255, 255, 255, 0.3),
-                15px 15px 15px rgba(0, 0, 0, 0.2),
-                5px 5px 5px rgba(0, 0, 0, 0.25);
-}
-  
-.imageRounded {
-    overflow: hidden;
-    border-radius: 50%;
-    margin: 30px;
-}
-
-/* ## Text Name ## */
-
-.textName {
-    padding: 0px 15px;
-    border-radius: 25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-around;
-    
-}
-
-.textName p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-primary-color);
-    padding: 0px 10px;
-    font-family: 'Niconne', cursive;
-}
-
-/* ## Social Network ## */
 
 .socialNetworksMain {
-    margin-bottom: 10px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .socialNetworksIcon {
-    width: 65px;
-    height: 65px;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    box-shadow: -10px -10px 5px rgba(255, 255, 255, 0.05),
+                -3px -3px 2px rgba(255, 255, 255, 0.3),
+                4px 4px 3px rgba(0, 0, 0, 0.5),
+                10px 10px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .socialNetworksIcon:hover {
-    box-shadow: inset 3px 3px 3px 0 rgba(0, 0, 0, 0.2),
-                inset 1px 1px 1px 0 rgba(0, 0, 0, 0.25),
-                inset -3px -3px 3px 0 rgba(255, 255, 255, 0.2),
-                inset -1px -1px 1px 0 rgba(255, 255, 255, 0.3);
+
+    box-shadow: inset -10px -10px 5px rgba(255, 255, 255, 0.05),
+                inset -3px -3px 2px rgba(255, 255, 255, 0.3),
+                inset 4px 4px 3px rgba(0, 0, 0, 0.5),
+                inset 10px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
-.socialNetworksMain a {
-    color: var(--text-primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.socialNetworksIcon a {
+    font-size: 60px;
 }
 
-.socialNetworksMain a:hover {
-    color: var(--text-primary-color);
-
+#linkedin:hover a, #twitter:hover a, #facebook:hover a, #github:hover a {
+    color: rgb(255, 255, 255, 0.9);
 }
 
-.socialNetworksMain a i {
-    font-size: 50px;
+#linkedin a {
+    color: rgba(14, 118, 168, 0.5);
 }
-
-/* #### Footer #### */
-
-.footerCustom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    line-height: 30px; /* Vertically center the text there */
-    color: whitesmoke;
-    background: black;
-}
-
-
-.poweredBy {
-    float: right;
-    padding: 0px 15px;
-    font-size: 12px;
-}
-
-.footPoweredByUrl {
-    color: white;
-    font-size: 18px;
-}
-
-.footPoweredByUrl:hover {
-    color: white;
-    font-size: 22px;
     
+#linkedin:hover {
+    background-color: rgba(14, 118, 168, 0.6);
 }
 
-.footPoweredByUrlSpan {
-    font-family: 'Niconne', cursive;
-    font-style: italic;
-    font-weight: bolder;
+#twitter a {
+    color: rgba(0, 172, 238, 0.5);
+}
+    
+#twitter:hover {
+    background-color: rgba(0, 172, 238, 0.6);
 }
 
-.footPoweredByDomainSpan {
-    font-size: 8px;
-    font-weight: bold;
-    color: white;
-
+#facebook a {
+    color: rgba(59, 89, 152, 0.5);
 }
+    
+#facebook:hover {
+    background-color: rgba(59, 89, 152, 0.6);
+}
+
+#github a {
+    color: rgba(23, 21, 21, 0.5);
+}
+    
+#github:hover {
+    background-color: rgba(23, 21, 21, 0.7);
+}
+
