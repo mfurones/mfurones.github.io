@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matías Furones</title>
+  <!-- bootstrap Iconos -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Local -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <label class="label" >
+    <div class="toggle">
+      <input id="theme-toggle" class="toggle-state" type="checkbox" name="check" value="check">
+      <div class="indicator"></div>
+    </div>
+  </label>
+
+  <div class="container">
+    <header>
+      <h1>Matías Furones</h1>
+      <h2>Cloud Engineer | Pipeline Automation | DevOps</h2>
+    </header>
+
+    <main>
+      <section class="left-panel">
+        <div class="profile-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./images/mf01.jpg" alt="Tu foto" class="profile-img" />
+            </div>
+            <div class="card-back">
+              <p>Soy un Cloud Engineer con experiencia en soluciones escalables, automatización y arquitectura moderna en la nube.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">CV</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Tenis de mesa</a></li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+    <footer>
+      <ul class="social-links">
+        <li id="linkedin">
+          <a title="Matias Furones" href="https://www.linkedin.com/in/matiasfurones/" target="_blank">
+            <i class="icon-social fa fa-linkedin-square"></i></a></li>
+        <li id="twitter">
+          <a title="@matiasfurones" href="https://twitter.com/matiasfurones" target="_blank">
+            <i class="icon-social fa fa fa-twitter-square"></i></a></li>
+        <li id="facebook">
+          <a title="matias.furones" href="https://www.facebook.com/matias.furones" target="_blank">
+            <i class="icon-social fa fa-facebook-official"></i></a></li>
+        <li id="github">
+          <a title="mfurones" href="https://github.com/mfurones" target="_blank">
+            <i class="icon-social fa fa-github-square"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+  
+    // Comprobá el estado inicial si querés guardar el modo (opcional)
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark', themeToggle.checked);
+    });
+  </script>
+</body>
+</html>
